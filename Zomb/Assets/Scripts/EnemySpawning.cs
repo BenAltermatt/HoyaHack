@@ -18,7 +18,7 @@ public class EnemySpawning : MonoBehaviour
     public bool spawnerDone;
     public GameObject spawnerDoneGameObject;
 
-    pribate void Start(){
+    private void Start(){
         Invoke("SpawnEnemy", 0.5f);
     }
 
