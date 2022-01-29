@@ -35,7 +35,7 @@ public class GlobalScript : ScriptableObject
         public String name = "Katana";
         public int damage = 5;
         public boolean longRange = false;
-        public float useSpeed = 3;
+                public float useSpeed = 3;
         public float useCoolDown = 3;
     }
 } 
