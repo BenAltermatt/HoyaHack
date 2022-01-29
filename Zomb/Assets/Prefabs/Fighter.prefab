@@ -80,6 +80,7 @@ MonoBehaviour:
   swingSpeed: 0.25
   swingCooldown: 0.5
   isPlayer: 0
+  projectile: {fileID: 0}
 --- !u!1 &8712998450697254095
 GameObject:
   m_ObjectHideFlags: 0
