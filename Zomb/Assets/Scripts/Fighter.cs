@@ -5,6 +5,7 @@ using UnityEngine;
 public class Fighter : MonoBehaviour
 {
     // Essentially building our game objecg
+    public Transform t;
     public Rigidbody2D rb;
     public GameObject hitbox;
     public GameObject hurtbox;
@@ -39,8 +40,6 @@ public class Fighter : MonoBehaviour
         
     }
 
-    
-
     // 
     void FixedUpdate()
     {
@@ -55,6 +54,13 @@ public class Fighter : MonoBehaviour
         }
 
         afterSwing();
+    }
+
+    // Turns on the hitbox and slightly moves so its detected
+    void turnOnHitbox()
+    {
+        hitbox.GetComponent<BoxCollider2D>().enabled = true;
+         t.position = new Vector2 (t.position.x+0.000001f, t.position.y);
     }
 
     // the directions in the x and y direction that the object wishes to move
@@ -79,16 +85,14 @@ public class Fighter : MonoBehaviour
         if(Time.time - timeSwung > swingSpeed && // we arent already in the process of swinging
         Time.time - timeSwung > swingCooldown)   // we arent in cooldown
         {
-            // shout("Swinging");
             timeSwung = Time.time; 
-            hitbox.GetComponent<BoxCollider2D>().enabled = true; // turn on our hitbox
+            turnOnHitbox(); // turn on our hitbox
         }
     }
 
     // handle the melee attack after bits
     public void afterSwing() {
-        //shout("Swing completed: " + (Time.time - timeSwung > swingSpeed));
-        //shout("Swing cooldown completed: " + (Time.time - timeSwung > swingCooldown));
+
         if(Time.time - timeSwung > swingSpeed) // we finished swinging already
             // shout((Time.time - timeSwung) + " time since swung");
             hitbox.GetComponent<BoxCollider2D>().enabled = false; // turn the hitbox off again
@@ -98,6 +102,7 @@ public class Fighter : MonoBehaviour
     public void registerCollision(string tag, int AttackValue)
     {
         shout("This object has been hit.");
+        takeDamage(AttackValue);
     }
 
     // calculates the damage inflicted by this fighter

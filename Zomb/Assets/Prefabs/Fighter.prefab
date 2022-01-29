@@ -69,6 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2bf7665b0e8248f4bf7c91bc1451fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  t: {fileID: 8940484773675400524}
   rb: {fileID: 2596588183243589323}
   hitbox: {fileID: 3476645522406275204}
   hurtbox: {fileID: 4538948730040335460}
@@ -76,8 +77,8 @@ MonoBehaviour:
   dir: -1
   health: 20
   strength: 1
-  swingSpeed: 1
-  swingCooldown: 2
+  swingSpeed: 0.25
+  swingCooldown: 0.5
   isPlayer: 0
 --- !u!1 &8712998450697254095
 GameObject:
