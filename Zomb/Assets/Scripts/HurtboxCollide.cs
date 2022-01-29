@@ -24,12 +24,20 @@ public class HurtboxCollide : MonoBehaviour
         // collect information about what we are hitting
         GameObject otherObject = collider.GetComponent<Transform>().parent.gameObject;
 
-        if(collider.tag == "Hitbox") // if we are bing hit
+        if(collider.tag == "Hitbox" || collider.tag == "Projectile") // if we are bing hit
         {
             Fighter parentScript = parent.GetComponent<Fighter>(); 
-            Fighter attackerScript = otherObject.GetComponent<Fighter>(); 
+            if(collider.tag == "Hitbox")
+            {
+                Fighter attackerScript = otherObject.GetComponent<Fighter>(); 
+                parentScript.registerCollision(collider.tag, attackerScript.calculateMyAttackValue());
+            }
+            if(collider.tag == "Projectile")
+            {
+                ProjectileController attackerScript = otherObject.GetComponent<ProjectileController>();
+                parentScript.registerCollision(collider.tag, attackerScript.calculateMyAttackValue());
+            }
             
-            parentScript.registerCollision(collider.tag, attackerScript.calculateMyAttackValue()); // deal with taking damage
         }
     }
 
