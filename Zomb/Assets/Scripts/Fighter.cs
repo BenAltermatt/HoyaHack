@@ -9,6 +9,8 @@ public class Fighter : MonoBehaviour
     public Rigidbody2D rb;
     public GameObject hitbox;
     public GameObject hurtbox;
+    public GameObject projectile;
+    public Camera cam;
 
     // Stats of the fighter!
     public float speed;
@@ -24,12 +26,15 @@ public class Fighter : MonoBehaviour
 
     // Tracking melee attacks and cooldown
     private float timeSwung;
+
+    //Working with shooting now
     
     const bool debugging = true;
 
     // Start is called before the first frame update
     void Start()
     {
+        cam = Camera.main;
         timeSwung = Time.time;
         hitbox.GetComponent<BoxCollider2D>().enabled = false;
     }
@@ -37,7 +42,10 @@ public class Fighter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(isPlayer)
+        {
+            cam.transform.position = new Vector3(t.position.x, t.position.y, cam.transform.position.z);
+        }
     }
 
     // 
@@ -56,9 +64,21 @@ public class Fighter : MonoBehaviour
                 // shout("Space key is being pressed");
                 attack();
             }
+
+            if(Input.GetMouseButton(0))
+            {
+                shoot(dir, Random.Range(-.1f, .1f));
+            }
         }
 
         afterSwing();
+    }
+
+    // this deals with the intricacies of shooting
+    void shoot(float x, float y)
+    {
+        GameObject shot = Instantiate(projectile, t);
+        shot.GetComponent<ProjectileController>().fire(x, y);
     }
 
     // Turns on the hitbox and slightly moves so its detected
