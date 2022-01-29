@@ -2,17 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GlobalScript : MonoBehaviour
+public class GlobalScript : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public int killCount;
+    public Time timeStarted;
+
+    public struct Pistol () {
+        public String name = "Pistol";
+        public int damage = 5;
+        public boolean longRange = true;
+        public float useSpeed = 3;
+        public float useCoolDown = 3;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public struct MachineGun() {
+        public String name = "Machine Gun";
+        public int damage = 5;
+        public boolean longRange = true;
+        public float useSpeed = 3;
+        public float useCoolDown = 3;
     }
-}
+
+    public struct HeavyMachineGun() {
+        public String name = "Heavy Machine Gun";
+        public int damage = 5;
+        public boolean longRange = true;
+        public float useSpeed = 3;
+        public float useCoolDown = 3;
+    }
+
+    public struct Katana() {
+        public String name = "Katana";
+        public int damage = 5;
+        public boolean longRange = false;
+        public float useSpeed = 3;
+        public float useCoolDown = 3;
+    }
+} 
