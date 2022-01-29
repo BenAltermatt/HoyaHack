@@ -22,7 +22,7 @@ public class EnemySpawning : MonoBehaviour
         Invoke("SpawnEnemy", 0.5f);
     }
 
-    void SpawnEnemy(){
+   /* void SpawnEnemy(){
         index = Random.Range(0, spawnPoints.Length);
         currentPoint = SpawnPoints[index];
         float timeBtwSpans = Random.Range(minTimeBtwSpawns, maxTimeBtwSpawns);
@@ -38,5 +38,5 @@ public class EnemySpawning : MonoBehaviour
             //up to us
             spawnerDoneGameObject.SetActive(true);
         }
-    }
+    }*/
 }
