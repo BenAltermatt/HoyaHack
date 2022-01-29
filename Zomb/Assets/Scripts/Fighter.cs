@@ -63,6 +63,13 @@ public class Fighter : MonoBehaviour
          t.position = new Vector2 (t.position.x+0.000001f, t.position.y);
     }
 
+    // update direction when the player turns
+    // visually and hitbox-wise
+    void updateDir(int direction) 
+    {
+        
+    }
+
     // the directions in the x and y direction that the object wishes to move
     void move(int x, int y) {
         // direction the character is facing
