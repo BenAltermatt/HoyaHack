@@ -43,6 +43,11 @@ public class Fighter : MonoBehaviour
     // 
     void FixedUpdate()
     {
+        if (health <= 0) // dead
+        {
+            die();
+        }
+
         if(isPlayer) // check if this thing has controls
         {
             move((int) Input.GetAxisRaw("Horizontal"), (int) Input.GetAxisRaw("Vertical"));
@@ -63,6 +68,13 @@ public class Fighter : MonoBehaviour
          t.position = new Vector2 (t.position.x+0.000001f, t.position.y);
     }
 
+    // update direction when the player turns
+    // visually and hitbox-wise
+    void updateDir(int direction) 
+    {
+        hitbox.GetComponent<BoxCollider2D>().offset = new Vector2(direction, 0);
+    }
+
     // the directions in the x and y direction that the object wishes to move
     void move(int x, int y) {
         // direction the character is facing
@@ -73,6 +85,8 @@ public class Fighter : MonoBehaviour
         // 
         Vector2 newV = new Vector2(x, y).normalized;
         rb.velocity = newV * speed;
+
+        updateDir(dir);
     }
 
     // handles attacks based on the weapon being used
@@ -120,4 +134,20 @@ public class Fighter : MonoBehaviour
         if(debugging) 
             Debug.Log(msg);
     }
+
+    // handles when the Fighter's health is below zero
+    void die() 
+    {
+        if(isPlayer) // handle game over
+        {
+
+        }
+        else
+        {
+            // play dying animation (?)
+            // disappear
+            Destroy(gameObject);
+        }
+    }
+
 }
