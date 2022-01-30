@@ -17,6 +17,7 @@ public class Fighter : MonoBehaviour
     public GameObject projectile;
     public GlobalScript globalVars;
     public Camera cam;
+    public Animator animator;
 
     // Stats of the fighter!
     public float speed;
@@ -177,6 +178,7 @@ public class Fighter : MonoBehaviour
 
         newState += dir;
         
+        animator.SetInteger("StateVal", State_Val);
     }
 
     void weaponUpdate() 

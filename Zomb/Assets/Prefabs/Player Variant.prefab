@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 815682524980955148, guid: b85a0aef4886e4c70b4b32998b0ddf45, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 6617526336202922032}
+    - target: {fileID: 815682524980955148, guid: b85a0aef4886e4c70b4b32998b0ddf45, type: 3}
       propertyPath: isPlayer
       value: 1
       objectReference: {fileID: 0}
@@ -94,10 +98,9 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8712998450697254095, guid: b85a0aef4886e4c70b4b32998b0ddf45, type: 3}
   m_PrefabInstance: {fileID: 5727095420389779702}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &2569934465179251558
+--- !u!95 &6617526336202922032
 Animator:
   serializedVersion: 4
-
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -115,4 +118,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
-
