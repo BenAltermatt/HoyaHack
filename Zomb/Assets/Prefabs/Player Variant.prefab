@@ -19,6 +19,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4697651060753337629, guid: b85a0aef4886e4c70b4b32998b0ddf45, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6067580827802228248, guid: b85a0aef4886e4c70b4b32998b0ddf45, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: df97ecb14050eeb4eaa2b927b6dc6fe5, type: 3}
+    - target: {fileID: 7679874798343646086, guid: b85a0aef4886e4c70b4b32998b0ddf45, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0208316
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679874798343646086, guid: b85a0aef4886e4c70b4b32998b0ddf45, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.023717
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679874798343646086, guid: b85a0aef4886e4c70b4b32998b0ddf45, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.631
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679874798343646086, guid: b85a0aef4886e4c70b4b32998b0ddf45, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.053
+      objectReference: {fileID: 0}
     - target: {fileID: 8940484773675400524, guid: b85a0aef4886e4c70b4b32998b0ddf45, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -65,22 +89,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b85a0aef4886e4c70b4b32998b0ddf45, type: 3}
---- !u!1 &1030148047107646955 stripped
+--- !u!1 &4003826639561546809 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 4697651060753337629, guid: b85a0aef4886e4c70b4b32998b0ddf45, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8712998450697254095, guid: b85a0aef4886e4c70b4b32998b0ddf45, type: 3}
   m_PrefabInstance: {fileID: 5727095420389779702}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2242879196463579526
-MonoBehaviour:
+--- !u!95 &2569934465179251558
+Animator:
+  serializedVersion: 4
+
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1030148047107646955}
+  m_GameObject: {fileID: 4003826639561546809}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1b36db6e7a2441648a09e66646338d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  killCount: 0
-  timeStarted: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe7afbdd87d98724e8adab3464d4a70d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+
